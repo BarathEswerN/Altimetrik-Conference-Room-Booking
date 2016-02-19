@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)http://localhost:8100/?ionicplatform=ios#/booking -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <meta charset="utf-8">
+    <script>
+      // Injected Ionic Go To URL Live Reload Plugin
+      window.LiveReloadPlugin_IonicGoToUrl = (function() {
+        var GOTO_KEY = "__ionic_goto_url__";
+        var HISTORY_GO_KEY = "__ionic_history_go__";
+        var GoToUrlPlugin = function(window, host) {
+          this.window = window;
+          this.host = host;
+        }
+        GoToUrlPlugin.identifier = "__ionic_goto_url__";
+        GoToUrlPlugin.version = "1.0";
+        GoToUrlPlugin.prototype.reload = function(path) {
+          try {
+            if(path) {
+              if(path.indexOf(GOTO_KEY) === 0) {
+                this.window.document.location = path.replace(GOTO_KEY, "");
+                return true;
+              }
+              if(path.indexOf(HISTORY_GO_KEY) === 0) {
+                this.window.document.history.go( parseInt(path.replace(HISTORY_GO_KEY, ""), 10));
+                return true;
+              }
+            }
+          } catch(e) {
+            console.log(e);
+          }
+          return false;
+        };
+        return GoToUrlPlugin;
+      })();
+    </script>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="ionic.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+   <script src="ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="app.js"></script>
+    <script src="loginCtrl.js"></script>
+    <script src="detailsCtrl.js"></script>
+    <script src="bookingCtrl.js"></script>
+    <script src="hamburgerCtrl.js"></script>
+     <script src="pendingRequestCtrl.js"></script>
+  </head>
+  <body ng-app="AltiCRBook" ng-controller="hamburgerCtrl" class="grade-a platform-browser platform-ios platform-ready">
+    <ion-nav-view class="view-container" nav-view-transition="ios" nav-view-direction="none" nav-swipe=""><ion-view view-title="" class="pane" nav-view="cached" style="opacity: 0; transform: translate3d(0%, 0px, 0px);">
+<br><br><br>
+      <ion-content class="scroll-content ionic-scroll"><div class="scroll" style="transform: translate3d(0px, 0px, 0px) scale(1);">
+      	<br><br><br>
+      	<div>
+	    <label class="item item-input">
+	    <span class="input-label" aria-label="UserID" id="_label-0">UserID</span>
+	    <input type="text" value="">
+	  	</label>
+		<label class="item item-input">
+		<span class="input-label" aria-label="Password" id="_label-1">Password</span>
+		<input type="password" value="">
+		</label><br>
+    	<p><a href="" class="button button-block button-balanced" onclick="validateLogin()">Log In</a></p>
+    	<p><a href="" class="button button-block button-positive">Sign Up</a></p>
+    	</div>
+      </div><div class="scroll-bar scroll-bar-v"><div class="scroll-bar-indicator scroll-bar-fade-out" style="transform: translate3d(0px, 0px, 0px) scaleY(1); height: 0px;"></div></div></ion-content>
+</ion-view><ion-side-menus enable-menu-with-back-views="false" class="hamburger pane view" nav-view="active" style="opacity: 1; transform: translate3d(0%, 0px, 0px);">
+  <ion-side-menu-content class="menu-content pane menu-animated" style="transform: translate3d(0px, 0px, 0px);">
+    <ion-nav-bar class="bar-stable nav-bar-container" nav-bar-transition="ios">
+      <ion-nav-back-button class="hide"></ion-nav-back-button>
+
+      <ion-nav-buttons side="left" class="hide"></ion-nav-buttons>
+    <div class="nav-bar-block" nav-bar="cached"><ion-header-bar class="bar-stable bar bar-header" align-title="center"><button ng-click="$ionicGoBack()" class="button back-button hide buttons  button-clear header-item"><i class="icon ion-ios-arrow-back"></i> 
+      <span class="back-text"><span class="default-title">Back</span><span class="previous-title hide"></span></span></button><div class="buttons buttons-left header-item"><span class="left-buttons">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+        <div class="h1 title ">Details</div>
+      </span></div><div class="title title-center header-item"></div></ion-header-bar></div><div class="nav-bar-block" nav-bar="active"><ion-header-bar class="bar-stable bar bar-header" align-title="center"><button ng-click="$ionicGoBack()" class="button back-button hide buttons  button-clear header-item"><i class="icon ion-ios-arrow-back"></i> 
+      <span class="back-text"><span class="default-title">Back</span><span class="previous-title hide"></span></span></button><div class="buttons buttons-left header-item"><span class="left-buttons">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+        <div class="h1 title ">Details</div>
+      </span></div><div class="title title-center header-item"></div></ion-header-bar></div></ion-nav-bar>
+    <ion-nav-view name="menuContent" class="view-container" nav-view-transition="ios">
+      <ion-pane class="pane">  
+      <ion-content class="scroll-content ionic-scroll"><div class="scroll" style="transform: translate3d(0px, 0px, 0px) scale(1);">
+        
+        <div>
+        <div class="h1 title"><br><br></div>
+      <label class="item item-input">
+      <span class="input-label" aria-label="Employee name" id="_label-2">Employee name</span>
+      <input type="text" value="" ng-model="employee.name" class="ng-pristine ng-untouched ng-valid">
+      </label>
+        <label class="item item-input">
+      <span class="input-label" aria-label="Employee ID" id="_label-3">Employee ID</span>
+      <input type="text" value="">
+      </label>
+    <label class="item item-input">
+    <span class="input-label" aria-label="Meeting name" id="_label-4">Meeting name</span>
+    <input type="text" value="">
+    </label>
+    <label class="item item-input">
+    <span class="input-label" aria-label="Project name" id="_label-5">Project name</span>
+    <input type="text" value="">
+    </label>
+    <div class="list">
+      <label class="item item-input item-select">
+        <div class="input-label" aria-label="
+          Location
+        " id="_label-6">
+          Location
+        </div>
+        <select>
+          <option value="Select location">Select location</option>
+          <option value="Chennai - 13th floor">Chennai - 13th floor</option>
+          <option value="Chennai - 4th floor">Chennai - 4th floor</option>
+          <option value="Banglore EC office">Banglore EC office</option>
+          <option value="Banglore ETV office">Banglore ETV office</option>
+        </select>
+      </label>
+    <button class="button button-light">
+      Date and Time
+      </button>
+    </div><br><br>
+      <a href="" class="button button-balanced customBn" onclick="validateRequest()">Submit</a>
+      <a href="" class="button button-assertive customBn" onclick="resetDetails()">Reset</a>
+      </div>
+      </div><div class="scroll-bar scroll-bar-v"><div class="scroll-bar-indicator scroll-bar-fade-out" style="transform: translate3d(0px, 0px, 0px) scaleY(1); height: 0px;"></div></div></ion-content>
+</ion-pane>
+
+    </ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left" is-enabled="true" width="275" class="menu menu-left" style="width: 275px; z-index: 0;">
+    <ion-header-bar class="bar-stable bar bar-header">
+      <h1 class="title">Menu</h1>
+    </ion-header-bar>
+    <ion-content class="scroll-content ionic-scroll  has-header"><div class="scroll" style="transform: translate3d(0px, 0px, 0px) scale(1);">
+    <div>
+     <br><br><br><br>
+    </div>
+      <ion-list class="disable-user-behavior"><div class="list">
+        <ion-item menu-close="" onclick="newRequest()" class="item">
+          New request
+        </ion-item>
+        <ion-item menu-close="" onclick="pendingRequest()" class="item">
+          Pending requests
+        </ion-item>
+        <ion-item menu-close="" onclick="" class="item">
+          Booking history
+        </ion-item>
+        <ion-item menu-close="" onclick="logout()" class="item">
+          Logout
+        </ion-item>
+      </div></ion-list>
+    </div><div class="scroll-bar scroll-bar-v"><div class="scroll-bar-indicator scroll-bar-fade-out" style="transform: translate3d(0px, 0px, 0px) scaleY(1); height: 0px;"></div></div></ion-content>
+  </ion-side-menu>
+</ion-side-menus><ion-view view-title="Pending Request" class="pane" nav-view="stage" style="opacity: 1; transform: translate3d(0%, 0px, 0px);">
+	<ion-header-bar class="bar-stable bar bar-header">
+      <h1 class="title">Pending requests</h1>
+    </ion-header-bar>
+      <ion-content class="scroll-content ionic-scroll"><div class="scroll">
+      	<br><br><br>
+      	<div class="card">
+  		<div class="item item-text-wrap pendingReq">
+  		  This is a basic Card which contains an item that has wrapping text.
+  		</div>
+		</div>
+      </div></ion-content>
+</ion-view></ion-nav-view>
+    
+  
+<script>
+ionic && ionic.Platform && ionic.Platform.setPlatform("ios");
+</script>
+
+<script>//<![CDATA[
+document.write('<script src="//' + (location.hostname || 'localhost') + ':35729/livereload.js?snipver=1"><\/script>')
+//]]></script><script src="livereload.js"></script>
+
+
+</body></html>
