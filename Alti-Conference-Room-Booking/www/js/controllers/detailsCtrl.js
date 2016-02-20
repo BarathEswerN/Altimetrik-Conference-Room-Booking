@@ -2,7 +2,8 @@ altiApp.controller("detailsCtrl", function($scope, $state, $ionicSideMenuDelegat
 	$state.go('details.bookingForm');
 	$scope.date = "";
 	$scope.employee = {};
-	$scope.menuValue = "1";
+	// $scope.menuValue = "1";
+	$scope.navigationTitle = "New request";
 	console.log("entering loginctrl");
 	validateRequest = function() {
 		$state.go('booking');
@@ -11,23 +12,23 @@ altiApp.controller("detailsCtrl", function($scope, $state, $ionicSideMenuDelegat
 		$scope.employee.name = "";
 	}
 	newRequest = function() {
-		
-		console.log($scope.menuValue);
+		$scope.navigationTitle = "New request";
+		console.log("");
 		$state.go('details.bookingForm');
 	}
 	pendingRequest = function() {
-		
-		console.log($scope.menuValue);
+		$scope.navigationTitle = "Pending request";
+		console.log("Pending request");
 		$state.go('details.pendingRequest');
 	}
 	bookingHistory = function() {
-		
-		console.log($scope.menuValue);
+		$scope.navigationTitle = "Booking history";
+		console.log("Booking history");
 		$state.go('details.bookingHistory');
 	}
 	logout = function() {
-		$state.go('details.bookingForm');
-		console.log($scope.menuValue);
+		$scope.navigationTitle = "New request";
+		console.log("");
 		$state.go('login');
 	}
 });

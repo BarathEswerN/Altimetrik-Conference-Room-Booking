@@ -1,7 +1,8 @@
- <ion-pane>  
+ <ion-nav-view view-title="Booking History">
+
       <ion-content class="padding">
         <div>
-        <div class="h1 title">skaclkcn<br><br></div>
+        <div class="h1"><br><br></div>
       <label class="item item-input">
       <span class="input-label">Employee name</span>
       <input type="text" value="" ng-model="employee.name">
@@ -35,9 +36,13 @@
     <span class="input-label">Date</span>
     <input type="date" value="">
     </label>
+    <label class="item item-input">
+    <span class="input-label">Time</span>
+    <input type="time" value="">
+    </label>
     </div><br><br>
       <a href="" class="button button-balanced customBn" onclick="validateRequest()">Submit</a>
       <a href="" class="button button-assertive customBn" onclick="resetDetails()">Reset</a>
       </div>
       </ion-content>
-    </ion-pane>
+    </ion-nav-view>
