@@ -1,6 +1,7 @@
-altiApp.controller("pendingRequestCtrl", function($scope, $state, $ionicSideMenuDelegate){
+altiApp.controller("pendingRequestCtrl", function($scope, $state, empDataService){
 	
 	console.log("Enter pendingRequestCtrl");
-	// $scope.pendingRequest = {};
-	$scope.pendingRequests=["kjhak", "jn", "kjn", "klj"];
+	$scope.pendingRequests = empDataService.getDetails();
+	console.log($scope.pendingRequests);
+	
 });

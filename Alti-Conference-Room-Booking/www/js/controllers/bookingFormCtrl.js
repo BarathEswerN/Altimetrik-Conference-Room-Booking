@@ -1,7 +1,11 @@
-altiApp.controller("bookingFormCtrl", function($scope, $state){
+altiApp.controller("bookingFormCtrl", function($scope, $state, empDataService){
 	
-	console.log("entering loginctrl");
-	validate = function() {
-	$state.go('booking');
+	$scope.employee = {};
+	console.log("entering bookingFormCtrl");
+	validateRequest = function() {
+		console.log("entering validate");
+		console.log($scope.employee);
+		empDataService.setDetails($scope.employee);
+		$state.go('booking');
 	}
 });

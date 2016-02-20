@@ -1,10 +1,12 @@
 <ion-nav-view view-title="Pending Request">
-	
       <ion-content>
       	<br><br><br>
       	<div class="card">
   		<div class="item item-text-wrap pendingReq" ng-repeat="pendingRequest in pendingRequests">
-  		  This is a basic Card which contains an item that has wrapping text.
+  		  <div class="meetingDesc">
+          {{pendingRequests.meetingName}}<br>
+          {{pendingRequests.time}}
+        </div>
   		</div>
 		</div>
       </ion-content>

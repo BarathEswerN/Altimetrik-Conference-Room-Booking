@@ -1,4 +1,4 @@
-altiApp.controller("bookingHistoryCtrl", function($scope, $state, $ionicSideMenuDelegate){
+altiApp.controller("bookingHistoryCtrl", function($scope, $state, empDataService){
 	
 	console.log("Enter bookingHistoryCtrl");
 	// $scope.pendingRequest = {};
