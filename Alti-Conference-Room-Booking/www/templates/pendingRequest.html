@@ -1,13 +1,31 @@
-<ion-nav-view view-title="Pending Request">
+<ion-nav-view view-title="Pending Request" bgcolor="#0066cc">
       <ion-content>
       	<br><br><br>
       	<div class="card">
-  		<div class="item item-text-wrap pendingReq" ng-repeat="pendingRequest in pendingRequests">
-  		  <div class="meetingDesc">
-          {{pendingRequests.meetingName}}<br>
-          {{pendingRequests.time}}
+          <div class="transBn">
+      		  <div class="item item-text-wrap pendingReq" ng-repeat="pendingRequest in pendingRequests">
+            <p class="borderLbl">
+             <button class="transBn" onclick="editBooking()">
+      		  <div class="row">
+              <div class="col-25 meetingDate">
+                <h1 align="center"  style="color:#2f4f4f;">{{pendingRequests.day}}</h1>
+                {{pendingRequests.month}}
+                {{pendingRequests.year}}
+              </div>
+              <div class="divider">
+                <label hidden>Divider line</label>
+              </div>
+              <div class="meetingDetails">
+                <h2 align="center" style="color:#2f4f4f;">{{pendingRequests.meetingName}}&nbsp-&nbsp{{pendingRequests.projName}}</h2>
+               <!--  <p class="hDivider" style="color: #6F90FF;">Horizontal divider</p> -->
+                <p align="center" style="color:#2f4f4f;"><b>{{pendingRequests.from}}&nbsp-&nbsp{{pendingRequests.to}}</b></p>
+                <p align="center" style="color:#2f4f4f;">Pending</p>
+              </div>
+            </div>
+            </button>
+            </p>
+      		</div>
         </div>
-  		</div>
-		</div>
+		  </div>
       </ion-content>
 </ion-nav-view>

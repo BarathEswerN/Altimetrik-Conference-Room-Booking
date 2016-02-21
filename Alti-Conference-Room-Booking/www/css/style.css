@@ -14,7 +14,9 @@
 	height: 20px;
 }
 .pendingReq {
-	background-color: #fef014;
+	background-color: #FFFF66;
+	border: 1px solid #00ffffff;
+	border-radius: 5px; 
 }
 .bookingHistory {
 	background-color: #61c561;
@@ -22,7 +24,49 @@
 .navAlign {
 	text-align: center;
 }
-.meetingDesc {
-	width: 60%;
+.meetingDate {
+	width: 20%;
 	height: 100%;
+}
+.timeStyle {
+	float: left;
+	width: 10%;
+}
+.divider {
+	margin-left: 3%;
+	width: 1px;
+	background-color: #2f4f4f;
+	color: #fef014;
+	font-size: 0.01;
+}
+.meetingDetails {
+	width: 75%;
+}
+.transBn {
+	width: 100%;
+	height: 100%;
+	background-color: #FFFF66;
+	border: 2px #FFFFFF;
+	border-radius: 10px; 
+}
+.transBnApp {
+	width: 100%;
+	height: 100%;
+	background-color: #61c561;
+	border: 2px #FFFFFF;
+	border-radius: 10px; 
+}
+.transBnDeny {
+	width: 100%;
+	height: 100%;
+	background-color: #FFFF66;
+	border: 2px #FFFFFF;
+	border-radius: 10px; 
+}
+.borderLbl {
+	width: 100%;
+	height: 100%;
+	background-color: #FFFF66;
+	border: 1px solid #2f4f4f;
+	border-radius: 10px; 
 }

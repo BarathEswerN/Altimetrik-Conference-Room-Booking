@@ -3,7 +3,26 @@
       	<br><br><br>
       	<div class="card">
   		    <div class="item item-text-wrap bookingHistory" ng-repeat="booking in bookingHistories">
-  		    This is a basic Card which contains an item that has wrapping text.
+          <p class="borderLbl">
+          <button class="transBnApp" onclick="">
+  		    <div class="row">
+          <div class="col-25 meetingDate">
+            <h1 align="center"  style="color:#2f4f4f;">{{bookingHistories.day}}</h1>
+            {{bookingHistories.month}}
+            {{bookingHistories.year}}
+          </div>
+          <div class="divider">
+            <label hidden>Divider line</label>
+          </div>
+          <div class="meetingDetails">
+            <h2 align="center" style="color:#2f4f4f;">{{bookingHistories.meetingName}}&nbsp-&nbsp{{bookingHistories.projName}}</h2>
+           <!--  <p class="hDivider" style="color: #6F90FF;">Horizontal divider</p> -->
+            <p align="center" style="color:#2f4f4f;"><b>{{bookingHistories.from}}&nbsp-&nbsp{{bookingHistories.to}}</b></p>
+            <p align="center" style="color:#2f4f4f;">Approved</p>
+          </div>
+        </div>
+        </button>
+        </p>
   		</div>
 		</div>
       </ion-content>

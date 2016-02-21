@@ -36,13 +36,23 @@
     <input type="date" value="" ng-model="employee.date">
     </label>
     <label class="item item-input">
-    <span class="input-label">From</span>
-    <input type="time" value="" ng-model="employee.time">
-    <label class="item item-input">
-    <span class="input-label">To</span>
-    <input type="time" value="" ng-model="employee.time">
+    <span class="input-label timeStyle">From</span>
+    <input type="time" value="" ng-model="employee.from">
+    <span class="input-label timeStyle">To</span>
+    <input type="time" value="" ng-model="employee.to">
     </label>
-    </label>
+     <label class="item item-input item-select">
+        <div class="input-label">
+          Number of rooms
+        </div>
+        <select>
+          <option ng-model="employee.num">Select number</option>
+          <option ng-model="employee.num">1</option>
+          <option ng-model="employee.num">2</option>
+          <option ng-model="employee.num">3</option>
+          <option ng-model="employee.num">4</option>
+        </select>
+      </label>
     </div><br><br>
       <a href="" class="button button-balanced customBn" onclick="validateRequest()">Submit</a>
       <a href="" class="button button-assertive customBn" onclick="resetDetails()">Reset</a>

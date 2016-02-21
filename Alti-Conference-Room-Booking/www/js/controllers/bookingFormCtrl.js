@@ -8,4 +8,8 @@ altiApp.controller("bookingFormCtrl", function($scope, $state, empDataService){
 		empDataService.setDetails($scope.employee);
 		$state.go('booking');
 	}
+	resetDetails = function() {
+		$scope.employee = {};
+	}
+
 });

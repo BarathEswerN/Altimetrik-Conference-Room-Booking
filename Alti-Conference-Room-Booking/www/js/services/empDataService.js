@@ -1,6 +1,13 @@
 altiApp.factory('empDataService', function($http) {
 	var empData = {};
-	
+		empData.name = "Raj";
+		empData.id = "1234";
+		empData.meetingName = "Requirement analysis";
+		empData.projName = "Bajaj";
+		empData.loc = "Chennai-13th Floor";
+		empData.date = "12 Mar 2015";
+		empData.from = "1.30 pm";
+		empData.to = "2.30 pm";
 	
 	return {
 		setDetails: function(employeeData) {
@@ -12,7 +19,8 @@ altiApp.factory('empDataService', function($http) {
 		empData.projName = employeeData.projName;
 		empData.loc = employeeData.loc;
 		empData.date = employeeData.date;
-		empData.time = employeeData.time;
+		empData.from = employeeData.from;
+		empData.to = employeeData.to;
 		},
 		getDetails: function() {
 			return empData;
