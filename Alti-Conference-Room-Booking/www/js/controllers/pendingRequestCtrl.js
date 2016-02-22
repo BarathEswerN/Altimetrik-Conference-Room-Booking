@@ -46,8 +46,8 @@ altiApp.controller("pendingRequestCtrl", function($scope, $state, $ionicPopup, e
          scope: $scope,
 			
          buttons: [
-            { text: 'Cancel', type: 'button-assertive'}, {
-               text: '<b>Save</b>',
+            { text: 'Delete', type: 'button-assertive'}, {
+               text: '<b>Update</b>',
                type: 'button-positive',
                   onTap: function(e) {
 						
