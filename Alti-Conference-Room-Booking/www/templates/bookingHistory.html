@@ -2,23 +2,41 @@
       <ion-content>
       	<br><br><br>
       	<div class="card">
-  		    <div class="item item-text-wrap bookingHistory" ng-repeat="booking in bookingHistories">
+  		    <div class="item item-text-wrap bookingHistory" ng-repeat="bookingHistory in bookingHistories">
           <p class="borderLbl">
-          <button class="transBnApp" onclick="">
+          <button class="transBnApp" ng-if="bookingHistory.status=='Approved'" onclick="">
   		    <div class="row">
           <div class="col-25 meetingDate">
-            <h1 align="center"  style="color:#2f4f4f;">{{bookingHistories.day}}</h1>
-            {{bookingHistories.month}}
-            {{bookingHistories.year}}
+            <h1 align="center"  style="color:#2f4f4f;">{{bookingHistory.day}}</h1>
+            {{bookingHistory.month}}
+            {{bookingHistory.year}}
           </div>
           <div class="divider">
             <label hidden>Divider line</label>
           </div>
           <div class="meetingDetails">
-            <h2 align="center" style="color:#2f4f4f;">{{bookingHistories.meetingName}}&nbsp-&nbsp{{bookingHistories.projName}}</h2>
+            <h2 align="center" style="color:#2f4f4f;">{{bookingHistory.meetingName}}&nbsp-&nbsp{{bookingHistory.projName}}</h2>
            <!--  <p class="hDivider" style="color: #6F90FF;">Horizontal divider</p> -->
-            <p align="center" style="color:#2f4f4f;"><b>{{bookingHistories.from}}&nbsp-&nbsp{{bookingHistories.to}}</b></p>
-            <p align="center" style="color:#2f4f4f;">Approved</p>
+            <p align="center" style="color:#2f4f4f;"><b>{{bookingHistory.from}}&nbsp-&nbsp{{bookingHistory.to}}</b></p>
+            <p align="center" style="color:#2f4f4f;">{{bookingHistory.status}}</p>
+          </div>
+        </div>
+        </button>
+        <button class="transBnDeny" ng-if="bookingHistory.status=='Denied'" onclick="">
+              <div class="row">
+          <div class="col-25 meetingDate">
+            <h1 align="center"  style="color:#2f4f4f;">{{bookingHistory.day}}</h1>
+            {{bookingHistory.month}}
+            {{bookingHistory.year}}
+          </div>
+          <div class="divider">
+            <label hidden>Divider line</label>
+          </div>
+          <div class="meetingDetails">
+            <h2 align="center" style="color:#2f4f4f;">{{bookingHistory.meetingName}}&nbsp-&nbsp{{bookingHistory.projName}}</h2>
+           <!--  <p class="hDivider" style="color: #6F90FF;">Horizontal divider</p> -->
+            <p align="center" style="color:#2f4f4f;"><b>{{bookingHistory.from}}&nbsp-&nbsp{{bookingHistory.to}}</b></p>
+            <p align="center" style="color:#2f4f4f;">{{bookingHistory.status}}</p>
           </div>
         </div>
         </button>

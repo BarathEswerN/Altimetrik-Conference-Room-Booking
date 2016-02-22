@@ -8,17 +8,17 @@
              <button class="transBn" onclick="editBooking()">
       		  <div class="row">
               <div class="col-25 meetingDate">
-                <h1 align="center"  style="color:#2f4f4f;">{{pendingRequests.day}}</h1>
-                {{pendingRequests.month}}
-                {{pendingRequests.year}}
+                <h1 align="center"  style="color:#2f4f4f;">{{pendingRequest.day}}</h1>
+                {{pendingRequest.month}}&nbsp-
+                {{pendingRequest.year}}
               </div>
               <div class="divider">
                 <label hidden>Divider line</label>
               </div>
               <div class="meetingDetails">
-                <h2 align="center" style="color:#2f4f4f;">{{pendingRequests.meetingName}}&nbsp-&nbsp{{pendingRequests.projName}}</h2>
+                <h2 align="center" style="color:#2f4f4f;">{{pendingRequest.meetingName}}&nbsp-&nbsp{{pendingRequest.projName}}</h2>
                <!--  <p class="hDivider" style="color: #6F90FF;">Horizontal divider</p> -->
-                <p align="center" style="color:#2f4f4f;"><b>{{pendingRequests.from}}&nbsp-&nbsp{{pendingRequests.to}}</b></p>
+                <p align="center" style="color:#2f4f4f;"><b>{{pendingRequest.from}}&nbsp-&nbsp{{pendingRequest.to}}</b></p>
                 <p align="center" style="color:#2f4f4f;">Pending</p>
               </div>
             </div>

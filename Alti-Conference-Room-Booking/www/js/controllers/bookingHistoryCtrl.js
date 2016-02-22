@@ -3,13 +3,38 @@ altiApp.controller("bookingHistoryCtrl", function($scope, $state, empDataService
 	console.log("Enter bookingHistoryCtrl");
 	// $scope.pendingRequest = {};
 	//$scope.bookingHistories=["kjhak", "jn", "kjn", "klj"];
-	$scope.bookingHistories={};
-	$scope.bookingHistories.meetingName = "UAT setup";
-	$scope.bookingHistories.day = "27";
-	$scope.bookingHistories.month = "MAR";
-	$scope.bookingHistories.year = "2015";
-	$scope.bookingHistories.from = "2.30 pm";
-	$scope.bookingHistories.to = "4.30 pm";
-	$scope.bookingHistories.projName = "Bajaj";
-	console.log("Enter pendingRequestCtrl");
+	$scope.bookingHistories=[
+							{
+							 'meetingName' : 'Code revamp',
+							 'day' : '15',
+							 'month' : 'Feb',
+							 'year' : '2015',
+							 'from' : '2.30 pm',
+							 'to' : '4.30 pm',
+							 'projName' : 'AltiFin',
+							 'status' : 'Approved'
+							},
+							{
+							 'meetingName' : 'Client Demo',
+							 'day' : '28',
+							 'month' : 'MAR',
+							 'year' : '2015',
+							 'from' : '1.30 pm',
+							 'to' : '3.30 pm',
+							 'projName' : 'Bajaj',
+							 'status' : 'Denied'
+							},
+							{
+							 'meetingName' : 'Code walkthrough',
+							 'day' : '29',
+							 'month' : 'MAR',
+							 'year' : '2015',
+							 'from' : '9.30 am',
+							 'to' : '10.30 am',
+							 'projName' : 'Shatley',
+							 'status' : 'Approved'
+							}
+							];
+
+	console.log("Enter bookingHistoryCtrl");
 });
