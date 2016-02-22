@@ -1,4 +1,4 @@
-altiApp.controller("pendingRequestCtrl", function($scope, $state, empDataService){
+altiApp.controller("pendingRequestCtrl", function($scope, $state, $ionicPopup, empDataService){
 	$scope.pendingRequests=[
 							{
 							 'meetingName' : 'UAT setup',
@@ -34,7 +34,37 @@ altiApp.controller("pendingRequestCtrl", function($scope, $state, empDataService
 
 	};
 	console.log($scope.pendingRequests);
+
 	editBooking = function() {
-		$state.go('details.bookingForm');
-	}
+      $scope.data = {}
+    
+      // Custom popup
+      var myPopup = $ionicPopup.show({
+         template: '<input type = "text" ng-model = "data.model">',
+         title: 'Edit Request',
+         subTitle: '',
+         scope: $scope,
+			
+         buttons: [
+            { text: 'Cancel', type: 'button-assertive'}, {
+               text: '<b>Save</b>',
+               type: 'button-positive',
+                  onTap: function(e) {
+						
+                     if (!$scope.data.model) {
+                        //don't allow the user to close unless he enters model...
+                           e.preventDefault();
+                     } else {
+                        return $scope.data.model;
+                     }
+                  }
+            }
+         ]
+      });
+
+      myPopup.then(function(res) {
+         console.log('Tapped!', res);
+      });    
+   };
+	
 });

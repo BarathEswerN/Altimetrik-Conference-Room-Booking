@@ -1,13 +1,31 @@
-<ion-pane>  
+<ion-nav-view view-title="Booking">
 	<ion-header-bar class="bar-stable" ng-controller="bookingCtrl">
 	<button onclick="callDetails()" class="button icon-left ion-chevron-left button-clear button-dark"></button>
 	<h1 class="title">Booking</h1>
 	</ion-header-bar>
       <ion-content>
-     
-      	<div> <br><hr><br><br><br><br>
-	   		<input type="image" class="bookImage"src="/templates/ionic.png" />
-    	</div>
+     <br><br>
+     <div class="row">
+     	<div class="col"> 
+     		<h3 align="center">{{location}}</h3><hr><br>
+     	</div>
+     </div>
+     <div class="row hallDesc">
+     	<div class="col"> 
+     	<input class="hallDim" type="checkbox" name="" value="" ng-repeat="chennai13room in chennai13rooms">
+        <div class="">
+            <p> Date: {{date}}</p>
+            <p>Time: {{from}}-{{to}}</p>
+        </div>
+     	</div>
+     </div>
+     <div class="row">
+     	<div class="col"> 
+     		<input class="hallDim1" type="checkbox" name="" value="" ng-repeat="chennai13room in chennai13rooms">
+     	</div>
+     </div>
+      	
+
     	<p><a href="" class="button button-block button-balanced" onclick="validateLogin()">Confirm Booking</a></p>
       </ion-content>
-</ion-pane>
+</ion-nav-view>
