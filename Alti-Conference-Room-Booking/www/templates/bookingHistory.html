@@ -4,7 +4,7 @@
       	<div class="card">
   		    <div class="item item-text-wrap bookingHistory" ng-repeat="bookingHistory in bookingHistories">
           <p class="borderLbl">
-          <button class="transBnApp" ng-if="bookingHistory.status=='Approved'" onclick="">
+          <button class="transBnApp" ng-if="bookingHistory.status=='Approved'" onclick="bookingDetails()">
   		    <div class="row">
           <div class="col-25 meetingDate">
             <h1 align="center"  style="color:#2f4f4f;">{{bookingHistory.day}}</h1>
@@ -22,7 +22,7 @@
           </div>
         </div>
         </button>
-        <button class="transBnDeny" ng-if="bookingHistory.status=='Denied'" onclick="">
+        <button class="transBnDeny" ng-if="bookingHistory.status=='Denied'" onclick="bookingDetails()">
               <div class="row">
           <div class="col-25 meetingDate">
             <h1 align="center"  style="color:#2f4f4f;">{{bookingHistory.day}}</h1>
