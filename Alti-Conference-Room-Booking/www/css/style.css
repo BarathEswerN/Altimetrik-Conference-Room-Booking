@@ -89,14 +89,50 @@
 	width: 90% !important;
 	height: 80%;
 }
+.cellWidth {
+	margin-top: 10px;
+	margin-left: 10px;
+	width: 30px;
+	height: 30px;
+}
+#tab {
+	float: center;
+	margin-top: 10px;
+	margin-left: 10px;
+}
 
-#holder{    
+.notification-container {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    top: 15px;
+    left: 15px;
+    
+    i {
+        color: #fff;
+    }
+}
+
+.notification-counter {   
+    position: absolute;
+    top: 15px;
+    left: 12px;
+    
+    background-color: rgba(212, 19, 13, 1);
+    color: #fff;
+    border-radius: 3px;
+    padding: 1px 3px;
+    font: 8px Verdana;
+}
+/*Extra CSS*/
+.holder{   
+margin-top: 10px;
+margin-left: 10px; 
 height:270px;    
 width:93%;
 background-color:#FFFFFF;
 border:0.5px solid #A4A4A4;
-border-radius: 5px; 
-margin-left:10px;   
+border-radius: 5px;   
 }
 #img {
 

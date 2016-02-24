@@ -60,6 +60,11 @@ var altiApp = angular.module('AltiCRBook', ['ionic'])
     controller: 'bookingHistoryCtrl'
   })
    
+     .state('hallDetails', {
+    url: "/hallDetails",
+    templateUrl: "templates/hallDetails.html",
+    controller: 'hallDetailsCtrl'
+  })
    
   $urlRouterProvider.otherwise('/login');
 });

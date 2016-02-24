@@ -1,0 +1,51 @@
+<ion-nav-view view-title="Hall Details">
+  <ion-header-bar class="bar-stable" ng-controller="bookingCtrl">
+  <button onclick="callbooking()" class="button icon-left ion-chevron-left button-clear button-dark"></button>
+  <h1 class="title">Hall Details</h1>
+  </ion-header-bar>
+      <ion-content>
+      	<br><br><br>
+      	<div class="card" style="background-color:#000080;">
+  		    <div class="item item-text-wrap bookingHistory" ng-repeat="bookingHistory in bookingHistories">
+          <p class="borderLbl">
+          <button class="transBnApp" ng-if="bookingHistory.status=='Approved'" onclick="bookingDetails()">
+  		    <div class="row">
+          <div class="col-25 meetingDate">
+            <h1 align="center"  style="color:#2f4f4f;">{{bookingHistory.day}}</h1>
+            {{bookingHistory.month}}
+            {{bookingHistory.year}}
+          </div>
+          <div class="divider">
+            <label hidden>Divider line</label>
+          </div>
+          <div class="meetingDetails">
+            <h2 align="center" style="color:#2f4f4f;">{{bookingHistory.meetingName}}&nbsp-&nbsp{{bookingHistory.projName}}</h2>
+           <!--  <p class="hDivider" style="color: #6F90FF;">Horizontal divider</p> -->
+            <p align="center" style="color:#2f4f4f;"><b>{{bookingHistory.from}}&nbsp-&nbsp{{bookingHistory.to}}</b></p>
+            <p align="center" style="color:#2f4f4f;">Chennai - 13th floor</p>
+          </div>
+        </div>
+        </button>
+        <button class="transBnDeny" ng-if="bookingHistory.status=='Denied'" onclick="bookingDetails()">
+              <div class="row">
+          <div class="col-25 meetingDate">
+            <h1 align="center"  style="color:#2f4f4f;">{{bookingHistory.day}}</h1>
+            {{bookingHistory.month}}
+            {{bookingHistory.year}}
+          </div>
+          <div class="divider">
+            <label hidden>Divider line</label>
+          </div>
+          <div class="meetingDetails">
+            <h2 align="center" style="color:#2f4f4f;">{{bookingHistory.meetingName}}&nbsp-&nbsp{{bookingHistory.projName}}</h2>
+           <!--  <p class="hDivider" style="color: #6F90FF;">Horizontal divider</p> -->
+            <p align="center" style="color:#2f4f4f;"><b>{{bookingHistory.from}}&nbsp-&nbsp{{bookingHistory.to}}</b></p>
+            <p align="center" style="color:#2f4f4f;">Bangalore ETV</p>
+          </div>
+        </div>
+        </button>
+        </p>
+  		</div>
+		</div>
+      </ion-content>
+</ion-nav-view>

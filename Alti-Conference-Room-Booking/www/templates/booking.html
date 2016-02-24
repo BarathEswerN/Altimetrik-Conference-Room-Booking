@@ -1,4 +1,10 @@
 <ion-nav-view view-title="Booking">
+<style type="text/css">
+    .a{
+        list-style: none outside none;
+        position: absolute;   
+    } 
+</style>
 	<ion-header-bar class="bar-stable" ng-controller="bookingCtrl">
 	<button onclick="callDetails()" class="button icon-left ion-chevron-left button-clear button-dark"></button>
 	<h1 class="title">Booking</h1>
@@ -6,73 +12,61 @@
       <ion-content>
      <br><br>
      <div class="row">
-     	<div class="col"> 
-     		<h3 align="center">{{location}}&nbsp&nbsp&nbsp&nbsp<img src="/img/selecting.png" align="right">{{seatCnt}}</h3><hr><br>
-     	</div>
-     </div>
-   <!--   <div class="row hallDesc">
-     	<div class="col"> 
-     	<input class="hallDim" type="checkbox" name="" value="" ng-repeat="chennai13room in chennai13rooms">
-        <div class="">
-            <p> Date: {{date}}</p>
-            <p>Time: {{from}}-{{to}}</p>
+     <div class="col-75" style="float:center">
+     <br>
+     	<h3 align="right"> {{location}}</h3>
+          </div>
+        <div class="col-10 notification-container"> 
+        <br>
+     		<img src="/img/selecting.png" align="" ng-click="getHallDetails()">
+            <span class="notification-counter" id="testId">{{seat.count}}</span>
         </div>
-     	</div>
-     </div> -->
-   <!--   <div class="row">
-     	<div class="col"> 
-     		<input class="hallDim1" type="checkbox" name="" value="" ng-repeat="chennai13room in chennai13rooms">
-     	</div>
-     </div> -->
+        <br> 
+      
+     </div>
+  
     <div class="row"> 
-        <div class="col"> 	
-            <div id="holder"> 
-                <ul id="img" ng-click="seatCnt = seatCnt + 1">
-                <li class="seat row-0 col-0 selectedSeat" style="top:0px;left:0px" ><a title="1">1</a></li>
-                <li class="seat row-0 col-1" style="top:0px;left:40px" ng-click=""><a title="2">2</a></li>
-                <li class="seat row-0 col-2" style="top:0px;left:85px"><a title="3" ng-click="">3</a></li>
-                <li class="seat row-0 col-3 selectedSeat" style="top:0px;left:125px"><a title="4" ng-click="">4</a></li>
-                <li class="seat row-0 col-4" style="top:0px;left:165px"><a title="5" ng-click="">5</a></li>
-                <li class="seat row-0 col-5" style="top:0px;left:205px"><a title="6" ng-click="">6</a></li>
-                <li class="seat" style="top:0px;left:245px;"><a title="7" ng-click="">7</a></li>
-                <li class="seat" style="top:45px;left:275px;" ng-click=""><a title="8">8</a></li>
-                <li class="seat" style="top:85px;left:275px" ng-click=""><a title="9">9</a></li>
-                <li class="seat" style="top:125px;left:275px" ng-click=""><a title="10">10</a></li>
-                <li class="seat" style="top:165px;left:275px"><a title="11" ng-click="">11</a></li>
-                <li class="seat" style="top:205px;left:275px"><a title="12">12</a></li>
-                </ul>
+        <div class="col"> 
+            <div class="holder">
+            <div>
+            <h1></h1>
             </div>
+           <!--  <a ng-click="increment()">Increment</a> -->
+            <table id="tab" style="width:95%">
+              <tr>
+                <td class="cellWidth"><a class="a" title="1" style="margin-top:0px;">1</a><img src="/img/selectedSeats.png" id="image1" onclick="diffImage(this)" /></td>
+                <td class="cellWidth"><a class="a"title="2">2</a><img src="/img/unselectedSeat.png" id="image1" onclick="diffImage(this)" /></td>       
+                <td class="cellWidth"><a class="a" title="3">3</a><img src="/img/unselectedSeat.png" id="image1" onclick="diffImage(this)" /></td>
+                <td class="cellWidth"><a class="a" title="4" >4</a><img src="/img/selectedSeats.png" id="image1" onclick="diffImage(this)" /></td>
+                <td class="cellWidth"><a class="a" title="5">5</a><img src="/img/unselectedSeat.png" id="image1" onclick="diffImage(this)" /></td>   
+                <td class="cellWidth"><a class="a" title="6">6</a><img src="/img/unselectedSeat.png" id="image1" onclick="diffImage(this)" /></td>   
+                <td class="cellWidth"><a class="a" title="7">7</a><img src="/img/unselectedSeat.png" id="image1" onclick="diffImage(this)" /></td>   
+                  </tr>
+                  <tr>
+                  <td class="cellWidth"></td><td class="cellWidth"></td><td class="cellWidth"></td><td class="cellWidth"></td><td class="cellWidth"></td><td class="cellWidth"></td><td class="cellWidth"></td>
+                  <td class="cellWidth"><a class="a" title="8">8</a><img src="/img/unselectedSeat.png" id="image1" onclick="diffImage(this)" /></td>
+                  </tr>
+                  <tr>
+                  <td class="cellWidth"></td><td class="cellWidth"></td><td class="cellWidth"></td><td class="cellWidth"></td><td class="cellWidth"></td><td class="cellWidth"></td><td class="cellWidth"></td>
+                  <td class="cellWidth"><a class="a" title="9">9</a><img src="/img/unselectedSeat.png" id="image1" onclick="diffImage(this)" /></td>
+                  </tr><tr>
+                  <td class="cellWidth"></td><td class="cellWidth"></td><td class="cellWidth"></td><td class="cellWidth"></td><td class="cellWidth"></td><td class="cellWidth"></td><td class="cellWidth"></td>
+                  <td class="cellWidth"><a class="a" title="10">10</a><img src="/img/unselectedSeat.png" id="image1" onclick="diffImage(this)" /></td>
+                  </tr>
+                  <tr>
+                  <td class="cellWidth"></td><td class="cellWidth"></td><td class="cellWidth"></td><td class="cellWidth"></td><td class="cellWidth"></td><td class="cellWidth"></td><td class="cellWidth"></td>
+                  <td class="cellWidth"><a class="a" title="11">11</a><img src="/img/unselectedSeat.png" id="image1" onclick="diffImage(this)" /></td>
+                  </tr>
+                   <tr>
+                  <td class="cellWidth"></td><td class="cellWidth"></td><td class="cellWidth"></td><td class="cellWidth"></td><td class="cellWidth"></td><td class="cellWidth"></td><td class="cellWidth"></td>
+                  <td class="cellWidth"><a class="a" title="12">12</a><img src="/img/unselectedSeat.png" id="image1" onclick="diffImage(this)" /></td>
+                  </tr>
+                </table>
+                </div>
         </div>
     </div><br><hr>
 
-        <div style="width:580px;text-align:left;margin:5px">    
-        <input type="button" id="btnShowNew" value="Show Selected Seats"><input type="button" id="btnShow" value="Show All">    
-                </div>
-
-        <!-- <div class="card">
-             <div class="item item-text-wrap pendingReq" ng-repeat="selectn in selectionList">
-            <p class="borderLbl">
-             <button class="transBn" onclick="editBooking()">
-              <div class="row">
-              <div class="col-25 meetingDate">
-                <h1 align="center"  style="color:#2f4f4f;">{{pendingRequest.date | date : 'dd'}}</h1>
-                {{pendingRequest.date | date: 'MMM'}}&nbsp-
-                {{pendingRequest.date | date: 'yyyy'}}
-              </div>
-              <div class="divider">
-                <label hidden>Divider line</label>
-              </div>
-              <div class="meetingDetails">
-                <h2 align="center" style="color:#2f4f4f;">{{pendingRequest.meetingName}}&nbsp-&nbsp{{pendingRequest.projName}}</h2>
-               <!--  <p class="hDivider" style="color: #6F90FF;">Horizontal divider</p> -->
-                <!-- <p align="center" style="color:#2f4f4f;"><b>{{pendingRequest.from | date: 'hh:mm'}}&nbsp-&nbsp{{pendingRequest.to | date: 'hh:mm'}}</b></p>
-                <p align="center" style="color:#2f4f4f;">Pending</p>
-              </div>
-            </div>
-            </button>
-            </p>
-            </div>
-        </div>  -->
     	<p><a href="" class="button button-block button-balanced" onclick="validateLogin()">Confirm Booking</a></p>
+        
       </ion-content>
 </ion-nav-view>
