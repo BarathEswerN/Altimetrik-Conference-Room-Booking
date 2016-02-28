@@ -1,7 +1,10 @@
-altiApp.controller("detailsCtrl", function($scope, $state, $ionicSideMenuDelegate){
-	$state.go('details.bookingForm');
+altiApp.controller("detailsCtrl", function($scope, $state, $stateParams, $ionicSideMenuDelegate){
+	$state.go('details.selectLocation');
 	$scope.date = "";
 	$scope.employee = {};
+	 $scope.employeeName = $stateParams.param;
+	  $scope.employeeName.des = "Associate software engineer";
+	  console.log($scope.employeeName);
 	// $scope.menuValue = "1";
 	$scope.navigationTitle = "New request";
 	console.log("entering loginctrl");
@@ -14,7 +17,7 @@ altiApp.controller("detailsCtrl", function($scope, $state, $ionicSideMenuDelegat
 	newRequest = function() {
 		$scope.navigationTitle = "New request";
 		console.log("");
-		$state.go('details.bookingForm');
+		$state.go('details.selectLocation');
 	}
 	pendingRequest = function() {
 		$scope.navigationTitle = "Pending request";

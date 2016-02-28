@@ -5,10 +5,42 @@
 	height: 20px;
 	width: 20px
 }
+.background {
+    background: url("/img/bkgrnd.jpg");
+  }
+  .textFieldStyle {
+  	color: white;
+  	background-color: transparent;
+  	border: 1px solid #ffffff;
+	border-radius: 5px; 
+  }
+  .formStyle {
+  	border: 1px solid #ffffff;
+	border-radius: 5px; 
+  }
+  .buttonStyle {
+  	color: white;
+  	background-color: transparent;
+  	border: 1px solid transparent;
+	border-radius: 5px; 
+  }
 .customBn {
 	float: center;
 	margin-left: 10%;
 	width: 35%;
+}
+
+.dimension {
+	
+	height: 150px;
+	width: 100%;
+	border: 1px solid #ffffff;
+	border-radius: 5px; 
+}
+.selectLn {
+	font-size: 30px;
+	color: white;
+	text-align: center;
 }
 .employeeImg {
 	height: 20px;

@@ -1,59 +1,44 @@
- <ion-nav-view view-title="Booking History">
+ <ion-nav-view view-title="Booking Form" class="background">
+ <ion-header-bar class="bar-stable" ng-controller="bookingCtrl">
+  <button onclick="getLocatn()" class="button icon-left ion-chevron-left button-clear button-dark"></button>
+  <h1 class="title">Booking Form</h1>
+  </ion-header-bar>
       <ion-content class="padding">
         <div>
         <div class="h1"><br><br></div>
-      <label class="item item-input">
-      <span class="input-label">Employee name</span>
-      <input type="text" value="" ng-model="employee.name">
-      </label>
-        <label class="item item-input">
-      <span class="input-label">Employee ID</span>
-      <input type="text" value="" ng-model="employee.id">
-      </label>
-    <label class="item item-input">
-    <span class="input-label">Meeting name</span>
-    <input type="text" value="" ng-model="employee.meetingName">
-    </label>
-    <label class="item item-input">
-    <span class="input-label">Project name</span>
-    <input type="text" value="" ng-model="employee.projName">
-    </label>
-    <div class="list">
-      <label class="item item-input item-select">
-        <div class="input-label">
-          Location
-        </div>
-        <select>
-          <option ng-model="employee.loc">Select location</option>
-          <option ng-model="employee.loc">Chennai - 13th floor</option>
-          <option ng-model="employee.loc">Chennai - 4th floor</option>
-          <option ng-model="employee.loc">Banglore EC office</option>
-          <option ng-model="employee.loc">Banglore ETV office</option>
-        </select>
-      </label>
-    <label class="item item-input">
+    <p class="selectLn">{{location}}</p><br>
+    <label class="item item-input formStyle">
     <span class="input-label">Date</span>
-    <input type="date" value="" ng-model="employee.date">
-    </label>
-    <label class="item item-input">
+    <input type="date"  class="formStyle" value="" ng-model="employee.date">
+    </label><br>
+  
+    <label class="item item-input formStyle">
     <span class="input-label timeStyle">From</span>
-    <input type="time" value="" ng-model="employee.from">
+    <input type="time" value="" class="formStyle" ng-model="employee.from">
     <span class="input-label timeStyle">To</span>
     <input type="time" value="" ng-model="employee.to">
-    </label>
-     <label class="item item-input item-select">
+    </label><br>
+     <label class="item item-input item-select formStyle">
         <div class="input-label">
           Number of rooms
         </div>
-        <select>
-          <option ng-model="employee.num">Select number</option>
-          <option ng-model="employee.num">1</option>
-          <option ng-model="employee.num">2</option>
-          <option ng-model="employee.num">3</option>
-          <option ng-model="employee.num">4</option>
+        <select ng-model="employee.num">
+          <option>Select number</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
         </select>
-      </label>
-    </div><br><br>
+      </label><br>
+    <label class="item item-input formStyle">
+    <span class="input-label">Meeting name</span>
+    <input type="text" value="" ng-model="employee.meetingName">
+    </label><br>
+    <label class="item item-input formStyle">
+    <span class="input-label">Project name</span>
+    <input type="text" value="" ng-model="employee.projName">
+    </label>
+    <br><br>
       <a href="" class="button button-balanced customBn" onclick="validateRequest()">Submit</a>
       <a href="" class="button button-assertive customBn" onclick="resetDetails()">Reset</a>
       </div>

@@ -1,14 +1,15 @@
-<ion-nav-view view-title="">
+<ion-nav-view class="background" view-title="">
+
 <br><br><br>
       <ion-content class="padding">
       	<br><br><br>
       	<div>
       	<p style="color:red;">{{loginErrorText}}</p>
-	       <label class="item item-input">
-              <input type="text" placeholder="Username" ng-model="user.username">
-          </label>
-		<label class="item item-input">
-              <input type="password" placeholder="Password" ng-model="user.password">
+	       <label class="item item-input textFieldStyle">
+              <input type="text" class="textFieldStyle" placeholder="Username" style="color:#FFFFFF;" ng-model="user.username">
+          </label><br>
+		<label class="item item-input textFieldStyle">
+              <input type="password" class="textFieldStyle" placeholder="Password" style="color:#FFFFFF;" ng-model="user.password">
           </label><br>
     	<p><a href="" class="button button-block button-balanced" onclick="validateLogin()">Log In</a></p>
     	<p><a href="" class="button button-block button-positive">Sign Up</a></p>

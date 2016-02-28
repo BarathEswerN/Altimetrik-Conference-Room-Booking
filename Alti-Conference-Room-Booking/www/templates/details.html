@@ -17,25 +17,27 @@
   
   </ion-side-menu-content>
 
-  <ion-side-menu side="left">
+  <ion-side-menu side="left" class="background">
     <ion-header-bar class="bar-stable">
       <h1 class="title">Menu</h1>
     </ion-header-bar>
     <ion-content>
     <div>
-     <br><br><br><br>
+     <br><br>
     </div>
-      <ion-list>
-        <ion-item menu-close ng-model="menuValue" onClick="newRequest()">
+    <p class="selectLn" style="font-size:20px;">{{employeeName.username}}</p><br>
+    <p class="selectLn" style="font-size:20px;">{{employeeName.des}}</p><br><br>
+      <ion-list >
+        <ion-item menu-close ng-model="menuValue" class="textFieldStyle" onClick="newRequest()">
           New request
         </ion-item>
-        <ion-item menu-close ng-model="menuValue" onClick="pendingRequest()">
+        <ion-item menu-close ng-model="menuValue" class="textFieldStyle" onClick="pendingRequest()">
           Pending requests
         </ion-item>
-        <ion-item menu-close ng-model="menuValue" onClick="bookingHistory()">
-          Booking history
+        <ion-item menu-close ng-model="menuValue" class="textFieldStyle" onClick="bookingHistory()">
+          My Bookings
         </ion-item>
-        <ion-item menu-close ng-model="menuValue" onClick="logout()">
+        <ion-item menu-close ng-model="menuValue" class="textFieldStyle" onClick="logout()">
           Logout
         </ion-item>
       </ion-list>

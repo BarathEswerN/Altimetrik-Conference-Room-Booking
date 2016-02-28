@@ -33,7 +33,7 @@ altiApp.controller("pendingRequestCtrl", function($scope, $state, $ionicPopup, e
 	console.log("Enter pendingRequestCtrl");
 	$scope.pendingRequests = empDataService.getDetails();
 	if($scope.pendingRequests == "" && $scope.cardCnt == "0") {
-		$scope.pendingRequestStatus = "Currently you do not have any pending requests.";
+		//$scope.pendingRequestStatus = "Currently you do not have any pending requests.";
 	}
 	
 	console.log($scope.pendingRequests);

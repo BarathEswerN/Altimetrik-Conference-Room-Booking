@@ -1,10 +1,10 @@
-altiApp.controller("loginCtrl", function($scope, $state){
+altiApp.controller("loginCtrl", function($scope, $state, $stateParams){
 	$scope.user = {};
 	$scope.loginErrorText = "";
 	console.log("entering loginctrl");
 	validateLogin = function() {
-		
-	$state.go('details.bookingForm');
+		console.log($scope.user);
+	$state.go('details', {param: $scope.user});
 		
 }
 });

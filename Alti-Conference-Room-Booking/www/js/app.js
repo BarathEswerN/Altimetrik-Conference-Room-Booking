@@ -29,23 +29,33 @@ var altiApp = angular.module('AltiCRBook', ['ionic'])
   .state('login', {
     url: "/login",
     templateUrl: "templates/login.html",
-    controller: 'loginCtrl'
+    controller: 'loginCtrl',
+    params: { param: null }
   })
 
    .state('details', {
     url: "/details",
     templateUrl: "templates/details.html",
-    controller: 'detailsCtrl'
+    controller: 'detailsCtrl',
+    params: { param: null }
   })
-    .state('details.bookingForm', {
+    .state('bookingForm', {
     url: "/bookingForm",
     templateUrl: "templates/bookingForm.html",
-    controller: 'bookingFormCtrl'
+    controller: 'bookingFormCtrl',
+    params: { param: null }
+  })
+    .state('details.selectLocation', {
+    url: "/selectLocation",
+    templateUrl: "templates/selectLocation.html",
+    controller: 'selectLocationCtrl',
+    params: { param: null }
   })
    .state('booking', {
     url: "/booking",
     templateUrl: "templates/booking.html",
-    controller: 'bookingCtrl'
+    controller: 'bookingCtrl',
+    params: { param: null }
   })
 
     .state('details.pendingRequest', {
