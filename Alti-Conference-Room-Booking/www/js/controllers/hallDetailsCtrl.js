@@ -1,4 +1,4 @@
-altiApp.controller("hallDetailsCtrl", function($scope, $state, $ionicPopup, empDataService){
+altiApp.controller("hallDetailsCtrl", function($scope, $state, $ionicHistory, $ionicPopup, empDataService){
 	
 	console.log("Enter bookingHistoryCtrl");
 	// $scope.pendingRequest = {};
@@ -49,7 +49,8 @@ altiApp.controller("hallDetailsCtrl", function($scope, $state, $ionicPopup, empD
 
 	console.log("Enter bookingHistoryCtrl");
 	callbooking = function() {
-		$state.go('booking');
+		//$state.go('booking');
+		$ionicHistory.goBack();
 	}
 	bookingDetails = function() {
       $scope.data = {}

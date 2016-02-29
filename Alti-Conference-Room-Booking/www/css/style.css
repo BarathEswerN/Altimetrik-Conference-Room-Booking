@@ -8,6 +8,7 @@
 .background {
     background: url("/img/bkgrnd.jpg");
   }
+
   .textFieldStyle {
   	color: white;
   	background-color: transparent;
@@ -38,6 +39,7 @@
 	border-radius: 5px; 
 }
 .selectLn {
+	font-weight: lighter;
 	font-size: 30px;
 	color: white;
 	text-align: center;

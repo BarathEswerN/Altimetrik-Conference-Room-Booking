@@ -3,7 +3,7 @@ altiApp.controller("detailsCtrl", function($scope, $state, $stateParams, $ionicS
 	$scope.date = "";
 	$scope.employee = {};
 	 $scope.employeeName = $stateParams.param;
-	  $scope.employeeName.des = "Associate software engineer";
+	  //$scope.employeeName.des = "Associate software engineer";
 	  console.log($scope.employeeName);
 	// $scope.menuValue = "1";
 	$scope.navigationTitle = "New request";

@@ -7,6 +7,7 @@
         <div>
         <div class="h1"><br><br></div>
     <p class="selectLn">{{location}}</p><br>
+    <p style="color:red; font-size:15px;">{{formErr.msg}}</p>
     <label class="item item-input formStyle">
     <span class="input-label">Date</span>
     <input type="date"  class="formStyle" value="" ng-model="employee.date">
@@ -23,7 +24,7 @@
           Number of rooms
         </div>
         <select ng-model="employee.num">
-          <option>Select number</option>
+          <option selected="selected">Select number</option>
           <option>1</option>
           <option>2</option>
           <option>3</option>

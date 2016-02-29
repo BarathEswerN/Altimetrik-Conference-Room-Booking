@@ -1,4 +1,4 @@
-altiApp.controller("bookingCtrl", function($scope, $state, $stateParams){
+altiApp.controller("bookingCtrl", function($scope, $state, $ionicHistory, $stateParams, empDataService){
 	$scope.selectionList = [];
     $scope.seat = {};
     $scope.seat.count=0;
@@ -8,7 +8,7 @@ altiApp.controller("bookingCtrl", function($scope, $state, $stateParams){
 	console.log("entering bookingctrl");
   console.log($scope.bookingDetails);
 	callDetails = function() {
-		$state.go('bookingForm');
+		$ionicHistory.goBack();
 	}
    
    $scope.getHallDetails = function() {
@@ -49,6 +49,9 @@ altiApp.controller("bookingCtrl", function($scope, $state, $stateParams){
       console.log("lim exceeded");
     }
    }
+    }
+    confirmBooking = function() {
+      empDataService.setDetails($scope.bookingDetails);
     }
 	
 });
