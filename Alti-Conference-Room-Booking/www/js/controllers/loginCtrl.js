@@ -5,6 +5,7 @@ altiApp.controller("loginCtrl", function($scope, $state, $stateParams){
 	validateLogin = function() {
 		console.log($scope.user);
 	$state.go('details', {param: $scope.user});
+	$state.go('details.selectLocation');
 		
 }
 });

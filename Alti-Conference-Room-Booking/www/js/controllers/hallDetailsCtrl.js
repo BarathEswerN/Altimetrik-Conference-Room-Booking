@@ -1,6 +1,6 @@
 altiApp.controller("hallDetailsCtrl", function($scope, $state, $ionicHistory, $ionicPopup, empDataService){
 	
-	console.log("Enter bookingHistoryCtrl");
+	console.log("Enter hallDetailsCtrl");
 	// $scope.pendingRequest = {};
 	//$scope.bookingHistories=["kjhak", "jn", "kjn", "klj"];
 	$scope.bookingHistories=[
@@ -47,7 +47,7 @@ altiApp.controller("hallDetailsCtrl", function($scope, $state, $ionicHistory, $i
 							
 							];
 
-	console.log("Enter bookingHistoryCtrl");
+	
 	callbooking = function() {
 		//$state.go('booking');
 		$ionicHistory.goBack();

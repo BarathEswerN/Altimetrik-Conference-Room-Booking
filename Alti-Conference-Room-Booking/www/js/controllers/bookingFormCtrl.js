@@ -7,19 +7,21 @@ altiApp.controller("bookingFormCtrl", function($scope, $state, $stateParams, $io
 	console.log($scope.location);
 	console.log("entering bookingFormCtrl");
 	validateRequest = function() {
-		if(!$scope.employee.meetingName || !$scope.employee.projName || !$scope.employee.date || !$scope.employee.num ||
-			!$scope.employee.from || !$scope.employee.to) {
-			console.log("else");
-			$scope.formErr.msg = "Please fill all the fields";
-		}
-		else {
-			$scope.formErr.msg = "";
-			console.log("entering validate");
-			console.log($scope.employee);
-			//empDataService.setDetails($scope.employee);
-			$scope.employee.location = $scope.location;
+	// 	if(!$scope.employee.meetingName || !$scope.employee.projName || !$scope.employee.date || !$scope.employee.num ||
+	// 		!$scope.employee.from || !$scope.employee.to) {
+	// 		console.log("else");
+	// 		$scope.formErr.msg = "Please fill all the fields";
+	// 	}
+	// 	else {
+	// 		$scope.formErr.msg = "";
+	// 		console.log("entering validate");
+	// 		console.log($scope.employee);
+	// 		//empDataService.setDetails($scope.employee);
+	// 		$scope.employee.location = $scope.location;
+	// 		$state.go('booking', {param : $scope.employee});
+	// }
+	$scope.employee.location = $scope.location;
 			$state.go('booking', {param : $scope.employee});
-	}
 	};
 	resetDetails = function() {
 		console.log("reset")

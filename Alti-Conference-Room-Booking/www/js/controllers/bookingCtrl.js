@@ -1,4 +1,4 @@
-altiApp.controller("bookingCtrl", function($scope, $state, $ionicHistory, $stateParams, empDataService){
+altiApp.controller("bookingCtrl", function($scope, $state, $ionicHistory, $stateParams, $ionicModal, $timeout, empDataService){
 	$scope.selectionList = [];
     $scope.seat = {};
     $scope.seat.count=0;
@@ -10,9 +10,22 @@ altiApp.controller("bookingCtrl", function($scope, $state, $ionicHistory, $state
 	callDetails = function() {
 		$ionicHistory.goBack();
 	}
-   
-   $scope.getHallDetails = function() {
-    $state.go('hallDetails');
+   $ionicModal.fromTemplateUrl('/templates/hallDetails.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+   $scope.openModal = function() {
+    //$state.go('hallDetails');
+    console.log("getHallDetails");
+    $scope.modal.show();
+   }
+
+    $scope.closeModal = function() {
+    //$state.go('hallDetails');
+    console.log("closeModal");
+    $scope.modal.hide();
    }
     diffImage = function(img) {
 
@@ -43,15 +56,89 @@ altiApp.controller("bookingCtrl", function($scope, $state, $ionicHistory, $state
       if($scope.seat.count <= $scope.bookingDetails.num) {
      document.getElementById('testId').innerHTML=$scope.seat.count;
      //alert('i='+document.getElementById('testId').innerHTML);
-    img.src = "/img/selecting.png";
+      img.src = "/img/selecting.png";
   }
+
     else {
+      console.log($scope.seat.count);
       console.log("lim exceeded");
     }
    }
     }
     confirmBooking = function() {
       empDataService.setDetails($scope.bookingDetails);
+      $state.go('details.pendingRequest');
     }
+
+    //Logic for popup window
+
+ $scope.bookingHistories=[
+              {
+               'meetingName' : 'Alti001',
+               'day' : '30',
+               'month' : 'MAR',
+               'year' : '2015',
+               'from' : '9.30 am',
+               'to' : '10.30 am',
+               'projName' : 'Prestige',
+               'status' : 'Approved'
+              },
+              {
+               'meetingName' : 'Alti002',
+               'day' : '29',
+               'month' : 'MAR',
+               'year' : '2015',
+               'from' : '9.30 am',
+               'to' : '10.30 am',
+               'projName' : 'Mughal',
+               'status' : 'Approved'
+              },
+              {
+               'meetingName' : 'Alti003',
+               'day' : '28',
+               'month' : 'MAR',
+               'year' : '2015',
+               'from' : '1.30 pm',
+               'to' : '3.30 pm',
+               'projName' : 'ETV',
+               'status' : 'Approved'
+              },
+              {
+               'meetingName' : 'Code revamp',
+               'day' : '15',
+               'month' : 'Feb',
+               'year' : '2015',
+               'from' : '2.30 pm',
+               'to' : '4.30 pm',
+               'projName' : 'AltiFin',
+               'status' : 'Approved'
+              }
+              
+              ];
+
+  
+  $scope.callbooking = function() {
+    //$state.go('booking');
+    $scope.modal.hide();
+  }
+  bookingDetails = function() {
+      $scope.data = {}
+    
+      // Custom popup
+      var myPopup = $ionicPopup.show({
+         template: '<input type = "text" ng-model = "data.model">',
+         title: 'Edit Request',
+         subTitle: '',
+         scope: $scope,
+      
+         buttons: [
+            { text: 'Okay', type: 'button-positive'}
+         ]
+      });
+
+      myPopup.then(function(res) {
+         console.log('Tapped!', res);
+      });    
+   };
 	
 });
