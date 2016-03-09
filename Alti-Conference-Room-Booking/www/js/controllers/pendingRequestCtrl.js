@@ -1,4 +1,6 @@
 altiApp.controller("pendingRequestCtrl", function($scope, $state, $ionicPopup, empDataService){
+	
+
 	$scope.pendingRequestStatus = "";
 	$scope.cardCnt = "0";
 	$scope.pendingRequests=[

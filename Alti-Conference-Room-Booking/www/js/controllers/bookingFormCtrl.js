@@ -1,5 +1,5 @@
 altiApp.controller("bookingFormCtrl", function($scope, $state, $stateParams, $ionicHistory, empDataService){
-	
+
 	$scope.employee = {};
 	$scope.location = $stateParams.param;
 	$scope.formErr = {};
@@ -20,7 +20,7 @@ altiApp.controller("bookingFormCtrl", function($scope, $state, $stateParams, $io
 	// 		$scope.employee.location = $scope.location;
 	// 		$state.go('booking', {param : $scope.employee});
 	// }
-	$scope.employee.location = $scope.location;
+			$scope.employee.location = $scope.location;
 			$state.go('booking', {param : $scope.employee});
 	};
 	resetDetails = function() {
@@ -32,10 +32,9 @@ altiApp.controller("bookingFormCtrl", function($scope, $state, $stateParams, $io
 		$scope.employee.from = "";
 		$scope.employee.date = "";
 
-	}
+	};
 	getLocatn = function() {
 		console.log("callLocatn");
-		
 		$ionicHistory.goBack();
 		$state.go('details.selectLocation');
 	};

@@ -1,12 +1,13 @@
-altiApp.controller("bookingCtrl", function($scope, $state, $ionicHistory, $stateParams, $ionicModal, $timeout, empDataService){
+altiApp.controller("bookingCtrl", function($scope, $state, $ionicHistory, $stateParams, $window, $ionicModal, $timeout, empDataService){
 	$scope.selectionList = [];
     $scope.seat = {};
     $scope.seat.count=0;
     $scope.unselected = "unselectedSeat.png";
     $scope.selecting = "selecting.png";
     $scope.bookingDetails = $stateParams.param;
-	console.log("entering bookingctrl");
+	console.log("entering bookingctrlfgcfc");
   console.log($scope.bookingDetails);
+  //$window.location.reload();
 	callDetails = function() {
 		$ionicHistory.goBack();
 	}
@@ -30,7 +31,7 @@ altiApp.controller("bookingCtrl", function($scope, $state, $ionicHistory, $state
     diffImage = function(img) {
 
     if(img.src.match(/selecting/)) {
-      if($scope.seat.count >= 0) {
+          if($scope.seat.count >= 0) {
      $scope.seat.count--;
      console.log($scope.seat.count);
 
@@ -42,33 +43,40 @@ altiApp.controller("bookingCtrl", function($scope, $state, $ionicHistory, $state
     }
    }
     else if(img.src.match(/selectedSeats/)) {
-   
-     console.log($scope.seat.count);
+       console.log($scope.seat.count);
     img.src = "/img/selectedSeats.png";
    }
 
    else {
-     $scope.seat.count++;
-    console.log($scope.seat.count);
+   
+      console.log($scope.seat.count);
     console.log($scope.bookingDetails.num);
      //alert($scope.seat.count);
      $scope.testVal="testing";
-      if($scope.seat.count <= $scope.bookingDetails.num) {
+      if($scope.seat.count < $scope.bookingDetails.num) {
+                $scope.seat.count++;
      document.getElementById('testId').innerHTML=$scope.seat.count;
      //alert('i='+document.getElementById('testId').innerHTML);
       img.src = "/img/selecting.png";
   }
 
     else {
+      alert('Selected Count Exceeded');
       console.log($scope.seat.count);
       console.log("lim exceeded");
     }
    }
     }
-    confirmBooking = function() {
+
+    $scope.confirmBooking = function() {
       empDataService.setDetails($scope.bookingDetails);
-      $state.go('details.pendingRequest');
-    }
+      console.log("confirmBooking");
+     // $state.go('details.pendingRequest');
+     $ionicHistory.clearHistory();            
+$ionicHistory.clearCache().then(function() {
+                $state.go('details.pendingRequest');
+ });
+    };
 
     //Logic for popup window
 

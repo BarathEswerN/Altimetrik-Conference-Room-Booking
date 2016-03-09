@@ -1,5 +1,5 @@
 altiApp.controller("detailsCtrl", function($scope, $state, $stateParams, $ionicSideMenuDelegate){
-	$state.go('details.selectLocation');
+	//$state.go('details.selectLocation');
 	$scope.date = "";
 	$scope.employee = {};
 	 $scope.employeeName = $stateParams.param;

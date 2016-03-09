@@ -1,9 +1,10 @@
+<link href="css/style.css" rel="stylesheet">
 <ion-nav-view view-title="Pending Request" class="background" >
       <ion-content>
       	<br><br><br>
       	<div class="card">
           <div class="transBn">
-      		  <div class="item item-text-wrap pendingReq" ng-repeat="pendingRequest in pendingRequests">
+      		  <div class="item item-text-wrap pendingReq" ng-repeat="pendingRequest in pendingRequests track by $index">
             <p class="borderLbl">
              <button class="transBn" onclick="editBooking()">
       		  <div class="row">

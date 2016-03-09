@@ -52,6 +52,7 @@ var altiApp = angular.module('AltiCRBook', ['ionic'])
     params: { param: null }
   })
    .state('booking', {
+     cache: false,
     url: "/booking",
     templateUrl: "templates/booking.html",
     controller: 'bookingCtrl',
