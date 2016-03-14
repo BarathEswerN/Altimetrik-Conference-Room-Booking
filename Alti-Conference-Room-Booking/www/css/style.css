@@ -16,8 +16,13 @@
 	border-radius: 5px; 
   }
   .formStyle {
+  	color: white;
   	border: 1px solid #ffffff;
 	border-radius: 5px; 
+	background-color: transparent;
+  }
+  .formContentStyle {
+  	color: white;
   }
   .buttonStyle {
   	color: white;

@@ -6,26 +6,26 @@
   </ion-header-bar>
       <ion-content class="padding">
         <div>
-        <div class="h1"><br><br></div>
+        <div class="h1"><br></div>
     <p class="selectLn">{{location}}</p><br>
     <p style="color:red; font-size:15px;">{{formErr.msg}}</p>
     <label class="item item-input formStyle">
-    <span class="input-label">Date</span>
-    <input type="date"  class="formStyle" value="" ng-model="employee.date">
+    <span class="input-label formContentStyle">Date</span>
+    <input type="date" class="formStyle" style="color:#FFFFFF;" value="" ng-model="employee.date">
     </label><br>
   
     <label class="item item-input formStyle">
-    <span class="input-label timeStyle">From</span>
-    <input type="time" value="" class="formStyle" ng-model="employee.from">
-    <span class="input-label timeStyle">To</span>
-    <input type="time" value="" ng-model="employee.to">
+    <span class="input-label timeStyle formContentStyle">From</span>
+    <input type="time" value="" class="formStyle" style="color:#FFFFFF;" ng-model="employee.from">
+    <span class="input-label timeStyle formContentStyle">To</span>
+    <input type="time" style="color:#FFFFFF;" value="" ng-model="employee.to">
     </label><br>
      <label class="item item-input item-select formStyle">
-        <div class="input-label">
+        <div class="input-label formContentStyle">
           Number of rooms
         </div>
         <select ng-model="employee.num">
-          <option selected="selected">Select number</option>
+          <option >Select number</option>
           <option>1</option>
           <option>2</option>
           <option>3</option>
@@ -33,12 +33,12 @@
         </select>
       </label><br>
     <label class="item item-input formStyle">
-    <span class="input-label">Meeting name</span>
-    <input type="text" value="" ng-model="employee.meetingName">
+    <span class="input-label formContentStyle">Meeting name</span>
+    <input type="text" style="color:#FFFFFF;" value="" ng-model="employee.meetingName">
     </label><br>
     <label class="item item-input formStyle">
-    <span class="input-label">Project name</span>
-    <input type="text" value="" ng-model="employee.projName">
+    <span class="input-label formContentStyle">Project name</span>
+    <input type="text" style="color:#FFFFFF;" value="" ng-model="employee.projName">
     </label>
     <br><br>
       <a href="" class="button button-balanced customBn" onclick="validateRequest()">Submit</a>
